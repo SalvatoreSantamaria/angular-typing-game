@@ -3,7 +3,9 @@
     <div class="box column is-one-third">
 
       <h1 class="title has-text-centered">Typing Challenge</h1>
-      <p class="has-text-centered">Random Sentence: {{ randomText }}</p>
+      <!-- <p class="has-text-centered">Random Sentence: {{ randomText }}</p> -->
+      <!-- calling a method on class, which compares the letter with the enteredText. then each letter gets output as a span with a class -->
+      <span [class]="compare(letter, enteredText[i])" *ngFor="let letter of randomText.split(''); let i = index;">{{ letter }}</span>
 
       <div class="field">
         <input (input)="onTyping($event.target.value)" class="input">
