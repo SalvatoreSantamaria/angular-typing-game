@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { lorem } from 'faker';
+import { lorem, random } from 'faker';
  
 @Component({
   selector: 'app-root',
@@ -8,5 +8,12 @@ import { lorem } from 'faker';
 })
 export class AppComponent {
   title = 'angular-typing-game';
-  sentence = lorem.sentence()
+  randomText = lorem.sentence()
+  inputTextMatch = false
+
+  onTyping(value: string) {
+    if (this.randomText === value) {
+      this.inputTextMatch = true
+    }
+  }
 }
